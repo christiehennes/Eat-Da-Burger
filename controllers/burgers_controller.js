@@ -21,6 +21,17 @@ router.post("/api/burger", function(req, res){
     })
 })
 
+router.put("/api/burger/:id", function(req, res){
+
+    burger.updateOne(req.body.devoured, req.body.id, function(data){
+        res.json("Updated burger");
+    })
+
+    // burger.updateOne(req.body.id, req.body.devoured, function(data){
+    //     res.json("Updated Burger");
+    // })
+})
+
 
 
 

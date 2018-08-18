@@ -28,4 +28,15 @@
 
 
 
-<div class="right"></div>
+<div class="right">
+
+    <h3>Ate these burgers</h3>
+     <ul>
+    {{#each burgers}}
+        {{#if devoured}}
+        {{name}}
+        {{!-- <button class="eat-burger" data-id="{{this.id}}">Devour It</button> --}}
+        {{/if}}
+    {{/each}}
+    </ul>
+</div>

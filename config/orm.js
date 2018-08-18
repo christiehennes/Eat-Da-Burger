@@ -23,7 +23,13 @@ let orm = {
         })
 
     },
-    update: function(table, name, callback){
+    update: function(table, devoured, id, callback){
+
+        let queryString = "UPDATE " + table + " SET devoured='" + devoured + "' WHERE id='" + id + "'";
+        connection.query(queryString, function(err, results){
+            if (err) {throw err;};
+            callback(results);
+        });
 
     }
 }

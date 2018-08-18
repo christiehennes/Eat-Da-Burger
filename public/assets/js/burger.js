@@ -3,6 +3,21 @@
 //Click handler for devour it button
 $(document).on('click', '.eat-burger', function(){
     console.log("button eat clicked");
+
+    let id = parseInt($(this).data("id"));
+    console.log("ID: "+ id);
+
+    $.ajax(`/api/burger/${id}`, {
+        type: 'PUT',
+        data: {
+            devoured: 1,
+            id: id
+        }
+    }).then(function(){
+        console.log("Ate the burger!")
+        location.reload();
+    })
+
 })
 
 
@@ -30,7 +45,6 @@ $(document).on('click', '.new-burger', function(){
             }
         )
 
-
-    //Create a new burger in the DB
     //Clear out the form
+    $('#new-burger').empty();
 })
