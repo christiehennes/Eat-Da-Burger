@@ -1,0 +1,31 @@
+
+<h1>Burgers</h1>
+
+<h2>Burgers for all!</h2>
+
+
+<div class="left">
+    <ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+        {{name}}
+        <button class="eat-burger" data-id="{{this.id}}">Devour It</button>
+        {{/unless}}
+    {{/each}}
+    </ul>
+
+</div>
+
+
+<div class="center">
+    <h3>Add a burger</h3>
+
+        <input type="text" id="new-burger">
+        <button class="new-burger">Submit</button>
+
+
+</div>
+
+
+
+<div class="right"></div>
