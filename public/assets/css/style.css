@@ -1,0 +1,32 @@
+.container-wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card{
+    padding: 2vh;
+    margin: 3vh;
+    min-width: 25%;
+
+}
+
+.burger-card{
+    padding: 0.5vh;
+    margin: 0.5vh;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form{
+    text-align: center;
+}
+
+.input{
+    width: 70%;
+}
+
+h3{
+    text-align: center;
+}

@@ -1,42 +1,46 @@
 
 <h1>Burgers</h1>
 
-<h2>Burgers for all!</h2>
+
+<div class="container-wrapper">
+
+    <div class="card left">
+        <h3>Burgers to eat</h3>
+        {{#each burgers}}
+            {{#unless devoured}}
+            <div class="burger-card">
+                <div class="name">{{name}}</div>
+                <div class="button"><button class="eat-burger" data-id="{{this.id}}">Devour It</button></div>
+            </div>
+            {{/unless}}
+        {{/each}}
+
+    </div>
 
 
-<div class="left">
-    <ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-        {{name}}
-        <button class="eat-burger" data-id="{{this.id}}">Devour It</button>
-        {{/unless}}
-    {{/each}}
-    </ul>
-
-</div>
+    <div class="card center">
+        <h3>Add a burger</h3>
+            <div class="form">
+                <input type="text" id="new-burger" class="input">
+                <button class="new-burger">Submit</button>
+            </div>
 
 
-<div class="center">
-    <h3>Add a burger</h3>
-
-        <input type="text" id="new-burger">
-        <button class="new-burger">Submit</button>
-
-
-</div>
+    </div>
 
 
 
-<div class="right">
+    <div class="card right">
 
-    <h3>Ate these burgers</h3>
-     <ul>
-    {{#each burgers}}
-        {{#if devoured}}
-        {{name}}
-        {{!-- <button class="eat-burger" data-id="{{this.id}}">Devour It</button> --}}
-        {{/if}}
-    {{/each}}
-    </ul>
+        <h3>Ate these burgers</h3>
+        {{#each burgers}}
+            {{#if devoured}}
+            <div class="burger-card">
+                {{name}}
+                {{!-- <button class="eat-burger" data-id="{{this.id}}">Devour It</button> --}}
+            </div>
+            {{/if}}
+        {{/each}}
+    </div>
+
 </div>
