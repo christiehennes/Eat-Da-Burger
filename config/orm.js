@@ -14,8 +14,6 @@ let orm = {
     },
     insert: function(table, name, callback){
 
-        console.log("Name in orm: " + name);
-
         let queryString = "INSERT INTO " + table + " (name) VALUES " + "('" +name+ "')";
         connection.query(queryString, function(err, results){
             if (err) {throw err;};
@@ -34,6 +32,5 @@ let orm = {
     }
 }
   
-  // Export the orm object for the model (cat.js).
   module.exports = orm;
   

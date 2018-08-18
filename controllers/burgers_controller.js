@@ -9,7 +9,6 @@ router.get("/", function(req, res) {
       var burgerObject = {
         burgers: data
       };
-      console.log(burgerObject);
       res.render("index", burgerObject);
     });
 
@@ -26,10 +25,6 @@ router.put("/api/burger/:id", function(req, res){
     burger.updateOne(req.body.devoured, req.body.id, function(data){
         res.json("Updated burger");
     })
-
-    // burger.updateOne(req.body.id, req.body.devoured, function(data){
-    //     res.json("Updated Burger");
-    // })
 })
 
 
